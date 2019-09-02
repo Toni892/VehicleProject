@@ -1,0 +1,18 @@
+﻿@model testna_instr.Models.AddVehicleModelVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form asp-controller="VehicleModel" asp-action="edit" method="post">
+    <input asp-for="Name" />
+
+    <select asp-for="VehicleMakeId"   asp-items="@Model.Models" required>
+        <option>Choose vehicle make</option>
+    </select>
+    <input asp-for="Abrv" />
+    <button type="submit">
+        Edit
+    </button>
+</form>

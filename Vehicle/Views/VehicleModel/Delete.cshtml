@@ -1,0 +1,15 @@
+﻿@model project.service.Models.VehicleModel
+@{
+    ViewData["Title"] = "Izbrisi";
+}
+
+<h1>Delete</h1>
+
+<form asp-controller="VehicleModel" asp-action="delete" method="post">
+
+
+    @Model.Name
+
+    <button type="submit">delete</button>
+
+</form>

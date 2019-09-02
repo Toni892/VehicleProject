@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle", "Vehicle\Vehicle.csproj", "{A700D078-B38C-407E-995A-1825DC7AF27E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project.service", "project.service\project.service.csproj", "{37B5D082-2578-403F-B352-D8A0C3C02133}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A700D078-B38C-407E-995A-1825DC7AF27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A700D078-B38C-407E-995A-1825DC7AF27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A700D078-B38C-407E-995A-1825DC7AF27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A700D078-B38C-407E-995A-1825DC7AF27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B5D082-2578-403F-B352-D8A0C3C02133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B5D082-2578-403F-B352-D8A0C3C02133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B5D082-2578-403F-B352-D8A0C3C02133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B5D082-2578-403F-B352-D8A0C3C02133}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E240A0C-1D02-475A-88F5-73D0F53CF205}
+	EndGlobalSection
+EndGlobal

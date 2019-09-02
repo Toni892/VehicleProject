@@ -1,0 +1,15 @@
+﻿@model project.service.Models.VehicleMake
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form asp-controller="Vehicle" asp-action='@Model==null || Model.Id==0 ? "Add" : "Edit"' method="post">
+    <label>NAME</label>
+    <input asp-for="Name" />
+
+    <label>ABRV</label>
+    <input asp-for="Abrv" />
+    <button type="submit">Save</button>
+</form>

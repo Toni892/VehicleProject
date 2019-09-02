@@ -1,0 +1,37 @@
+﻿    @model testna_instr.Models.AddVehicleModelVM
+
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1 class="klasa">Add</h1>
+
+<h4>VehicleModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add" method="post">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Abrv" class="control-label"></label>
+                <input asp-for="Abrv" class="form-control" />
+            </div>
+            <div class="form-group">
+                <select asp-for="VehicleMakeId" id="" class="form-control" asp-items="@Model.Models" required>
+                    <option>Izaberite marku vozila</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,67 @@
+﻿@model Vehicle.Models.VehiclesModelsViewModel
+@{
+    ViewData["Title"] = "Index";
+    var currentPageParam = Context.Request.Query["page"].ToString();
+    var sorting = Context.Request.Query["sort"].ToString();
+    var currentPage = !string.IsNullOrEmpty(currentPageParam) ? int.Parse(currentPageParam) : 1;
+}
+<h1>Index</h1>
+<a asp-controller="VehicleModel" asp-action="Add">Add</a>
+@using (Html.BeginForm("Index", "VehicleModel", new { page = currentPage }, FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+@if (sorting != "desc")
+{
+    @Html.ActionLink("Sort by name descending", "Index", "VehicleModel", new { page = currentPage, SearchString = ViewBag.CurrentFilter, sort = "desc" })
+}
+else
+{
+    @Html.ActionLink("Sort by name ascending", "Index", "VehicleModel", new { page = currentPage, SearchString = ViewBag.CurrentFilter, sort = "asc" })
+}
+<table class="table">
+
+    <tr>
+        <td>Id</td>
+        <td>Model Name</td>
+        <td>Model Abrv</td>
+        <td>Make Name</td>
+        <td>Make Id</td>
+        <td>Make Abrv</td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model.Vehicles)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Name</td>
+    <td>@item.Abrv</td>
+    <td>@item.VehicleMake.Name</td>
+    <td>@item.VehicleMake.Id</td>
+    <td>@item.VehicleMake.Abrv</td>
+
+    <td><a asp-controller="vehiclemodel" asp-action="delete" asp-route-id="@item.Id">Delete</a></td>
+    <td><a asp-controller="vehiclemodel" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
+    <td><a asp-controller="vehiclemodel" asp-action="Details" asp-route-id="@item.Id">Details</a></td>
+
+</tr>
+    }
+</table>
+
+<ul class="pagination">
+    @{
+        var startIndex = Math.Max(1, (int)currentPage - 10);
+        var maxPage = Math.Floor(Model.Count / 10.0) + 1;
+        for (int i = startIndex; i <= maxPage; i++)
+        {
+            <li class="page-item @((int)currentPage == i ? "active" : "")">
+
+                @Html.ActionLink(i.ToString(), "Index", "VehicleModel", new { page = i, SearchString = ViewBag.CurrentFilter }, new { @class = ("page-link ") })
+            </li>
+        }
+    }
+</ul>

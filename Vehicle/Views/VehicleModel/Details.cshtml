@@ -1,0 +1,22 @@
+﻿@model project.service.Models.VehicleModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VehicleModel</h4>
+    <hr />
+    <h3>Id</h3>
+    <p>@Model.Id</p>
+    <h3>Name</h3>
+    <p>@Model.Name</p>
+
+    <h3>Abrv</h3>
+    <p>@Model.Abrv</p>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

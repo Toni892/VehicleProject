@@ -1,0 +1,13 @@
+﻿@model project.service.Models.VehicleMake
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<form asp-controller="Vehicle" asp-action="Delete" method="post">
+    <label asp-for="Id">@Model.Id</label>
+    <label asp-for="Name">@Model.Name</label>
+
+    <button>Delete</button>
+</form>
